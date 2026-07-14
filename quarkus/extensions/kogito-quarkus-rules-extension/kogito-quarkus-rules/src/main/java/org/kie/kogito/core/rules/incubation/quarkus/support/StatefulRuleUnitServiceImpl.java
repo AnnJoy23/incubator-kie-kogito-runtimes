@@ -82,7 +82,7 @@ class StatefulRuleUnitServiceImpl implements StatefulRuleUnitService {
         try {
             return (Class<RuleUnitData>) Thread.currentThread().getContextClassLoader().loadClass(className);
         } catch (ClassNotFoundException e) {
-            throw new IllegalArgumentException(e);
+            throw new IllegalArgumentException("Cannot load class " + className, e);
         }
     }
 
